@@ -43,10 +43,9 @@ class Dog
     sql = "SELECT * from dogs WHERE name = ?"
     row = DB[:conn].execute(sql, name).flatten
     if !row.empty?
-        Dog.new(name: row[1], breed: row[2], id: row[0])
-    else
-
       Dog.create(name: name, breed: breed)
+    else
+      Dog.new(name: row[1], breed: row[2], id: row[0])
     end
   end
 
