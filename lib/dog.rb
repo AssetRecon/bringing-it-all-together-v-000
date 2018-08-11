@@ -45,7 +45,7 @@ class Dog
     if row.empty?
       Dog.create(name: name, breed: breed)
     else
-      Dog.find_by_id(row[0])
+      Dog.new(name: name, breed: breed, id: id)
     end
   end
 
