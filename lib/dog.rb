@@ -55,7 +55,7 @@ class Dog
     dog
   end
 
-  def find_by_name(name)
+  def self.find_by_name(name)
     sql = "SELECT * from dogs WHERE name = ?"
 
     row = DB[:conn].execute(sql, name).flatten
