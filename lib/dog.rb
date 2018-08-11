@@ -45,7 +45,7 @@ class Dog
     if !row.empty?
         Dog.new(name: row[1], breed: row[2], id: row[0])
     else
-
+    
       Dog.create(name: name, breed: breed)
     end
   end
