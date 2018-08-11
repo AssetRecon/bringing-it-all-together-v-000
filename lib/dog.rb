@@ -46,6 +46,7 @@ class Dog
       Dog.create(name: name, breed: breed)
     else
       Dog.find_by_id(row[0])
+    end
   end
 
 
