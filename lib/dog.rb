@@ -36,7 +36,7 @@ class Dog
     sql = "SELECT * from dogs WHERE id = ?"
 
     row = DB[:conn].execute(sql, id).flatten
-    Dog.create(name: row[1], breed: row[2])
+    Dog.create(name: row[1], breed: row[2], id: row[0])
   end
 
 
