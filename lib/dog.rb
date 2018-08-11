@@ -16,7 +16,14 @@ class Dog
 
   def self.drop_table
     DB[:conn].execute("DROP TABLE dogs")
+  end
 
+  def save
+
+    sql = "INSERT INTO dogs (name, breed) VALUES (?, ?)"
+    DB[:conn].execute(sql, self.name, self.breed)
+
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs").flatten[0]
   end
 
 
