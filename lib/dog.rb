@@ -27,8 +27,12 @@ class Dog
     self
   end
 
+  def self.create(hash)
+    dog = Dogs.new(:name, :breed)
+    dog.save
 
 
+  end
 
 
 
