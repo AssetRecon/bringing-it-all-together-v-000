@@ -55,5 +55,11 @@ class Dog
     dog
   end
 
+  def find_by_name(name)
+    sql = "SELECT * from dogs WHERE name = ?"
+
+    row = DB[:conn].execute(sql, name).flatten
+    Dog.new_from_db(row)
+  end
 
 end
